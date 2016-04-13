@@ -1,0 +1,10 @@
+id: FacebookInstantArticle
+name: Facebook Instant Article Filter Plugin
+version: 1.0
+description: A Global Filter for Instant Article.
+author_name: Six Apart, Ltd.
+author_link: http://www.movabletype.org/
+
+tags:
+    modifier:
+        fbia: $FacebookInstantArticle::FacebookInstantArticle::Tags::_hdlr_fbia
