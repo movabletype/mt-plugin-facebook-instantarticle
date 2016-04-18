@@ -57,7 +57,7 @@ sub _hdlr_fbia {
     $str = $t . $str;
 
     # no empty <p></p>
-    $str =~ s/<p.*?>\s*?<\/p>//gis;
+    $str =~ s/<p[^>]*>\s*?<\/p>//gis;
     $str =~ s/\n{2,}//g;
     return $str;
 }

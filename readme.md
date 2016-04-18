@@ -42,7 +42,7 @@ This is a sample of RSS Feed Template for FB Instant Article.
   <title><mt:EntryTitle remove_html="1" encode_xml="1"></title>
   <link><mt:EntryLink encode_xml="1"></link>
   <content:encoded>
-    <mt:Unless fbia="nobr,noscript,unlink_img" encode_xml="1">
+    <mt:Unless encode_xml="1">
     <!doctype html>
     <html lang="en" prefix="op: http://media.facebook.com/op#">
       <head>
@@ -60,8 +60,10 @@ This is a sample of RSS Feed Template for FB Instant Article.
               <a rel="facebook" href="http://facebook.com/YOU">YOUR FACEBOOK PAGE</a>
             </address>
           </header>
-          <mt:EntryBody>
-          <mt:EntryMore>
+          <mt:Unless fbia="nobr,noscript,unlink_img">
+            <mt:EntryBody>
+            <mt:EntryMore>
+          <mt:Unless>
           <footer>
             <small>CREDIT/COPYRIGHT</small>
           </footer>
