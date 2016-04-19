@@ -13,6 +13,7 @@ This plugin add a global modifier to fit Facebook Instant Artcile Content:
 * Strip all comments
 * Wrap img elements with `<figure>...</figure>` if not.  
 * `<figure>` tags would independ from `<p>...</p>`
+* h3, h4, h5 and h6 tags are converted to h2.
 * Some options to handle the filter behavior.
 
 ### options

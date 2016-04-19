@@ -14,12 +14,16 @@ sub _hdlr_fbia {
 
 	# default pattern
         '__erase_comment' => [qr/<!--.*?-->/, ''],
+        '__h3' => [qr/<h3.*?>(.*?)<\/h3>/i, '<h2>$1<\/h2>'],
+        '__h4' => [qr/<h4.*?>(.*?)<\/h4>/i, '<h2>$1<\/h2>'],
+        '__h5' => [qr/<h5.*?>(.*?)<\/h5>/i, '<h2>$1<\/h2>'],
+        '__h6' => [qr/<h6.*?>(.*?)<\/h6>/i, '<h2>$1<\/h2>'],
     };
 
     # added default pattern.
     if (ref($arg) eq '') {
 	$arg = [split(/,/, lc($arg)) ];
-	push @$arg, qw( __erase_comment);
+	push @$arg, qw( __erase_comment __h3 __h4 __h5 __h6);
     }
 
     # unwrap link from image.
@@ -28,8 +32,8 @@ sub _hdlr_fbia {
     }
 
     # wrapping <img> with <figure> but not recursively
-    $str =~ s/(?s:(<figure.*>(?:(?!<\/?figure>).)*?)<img(.*?)>)((?s:.*?<\/figure>))/$1<__IMG__$2>$3/gi;
-    $str =~ s/((?:<a.*?>)?<img.*?>(?:<\/a>)?)/<figure>$1<\/figure>/gis;
+    $str =~ s/(?s:(<figure.*?>(?:(?!<\/?figure>).)*?)<img(.*?)>)((?s:.*?<\/figure>))/$1<__IMG__$2>$3/gi;
+    $str =~ s/((?:<a[^>]*>)?<img[^>]*>(?:<\/a>)?)/<figure>$1<\/figure>/gis;
     $str =~ s/<__IMG__(.*?)>/<img$1>/g;
 
     # strip style and class from <img>
@@ -51,7 +55,7 @@ sub _hdlr_fbia {
 	my $attr = $2;
 	my $p = $3;
 	$str =~ s/^.*?<p.*?>.*?<\/p>//is;
-	$p =~ s/\n*(<figure.*?>.*?<\/figure>)\n*/\n<\/p>\n$1\n<p>\n/gis;
+        $p =~ s/\n*(<figure.*?>.*?<\/figure>)\n*/\n<\/p>\n$1\n<p>\n/gis;
 	$t .= '<p' . $attr. '>' . $p . '</p>';
     }
     $str = $t . $str;
