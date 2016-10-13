@@ -10,7 +10,7 @@ sub _hdlr_fbia {
         # options          
 	'noscript' => [qr/<script.*?>.*?<\/script>/i, ''],
 	'nobr' => [qr/<br\s*\/?>/i, ''],
-	'iframe' => [qr/(?s:(<iframe.*?>.*?<\/iframe>))/i, '<figure class="op-social">$1<\/figure>'],
+	'iframe' => [qr/(?s:(<iframe.*?>.*?<\/iframe>))/i, '<figure class="op-interactive">$1<\/figure>'],
 
 	# default pattern
         '__erase_comment' => [qr/<!--.*?-->/, ''],

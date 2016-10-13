@@ -101,7 +101,7 @@ __END__
 --- template
 <mt:Unless fbia="iframe">123<iframe src="test"></iframe>456</mt:Unless>
 --- expected
-123<figure class="op-social"><iframe src="test"></iframe></figure>456
+123<figure class="op-interactive"><iframe src="test"></iframe></figure>456
 
 === removing a comment, as default rule.
 --- template

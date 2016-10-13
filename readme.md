@@ -20,7 +20,7 @@ This plugin add a global modifier to fit Facebook Instant Artcile Content:
 
 * `nobr`: This would strip all `<br>` tags.
 * `noscript`: This would strip all `<script>` tag.
-* `iframe`: This would be all `<iframe>` wrapped with `<frame class="op-social">...</frame>` tag.
+* `iframe`: This would be all `<iframe>` wrapped with `<frame class="op-interactive">...</frame>` tag.
 * `unlink_img`: This would strip `<a>` tag which be wraped `<img>`.
 
 ### RSS feed template
